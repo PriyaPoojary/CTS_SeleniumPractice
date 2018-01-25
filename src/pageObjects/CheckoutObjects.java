@@ -49,10 +49,6 @@ public class CheckoutObjects {
 	public void clickAddToCartButton(){
 		btnAddToCart.click();
 	}
-	
-	public CheckoutObjects() {
-		super();
-	}
 
 	public void checkout(){
 		Actions action1 = new Actions(driver);
