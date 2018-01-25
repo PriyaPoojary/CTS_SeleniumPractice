@@ -11,9 +11,9 @@ public class CheckoutTest extends InitializeBrowser {
 	@Test
 	public void ChooseItemAndCheckoutTest(){
 		CheckoutObjects hpo = PageFactory.initElements(driver, CheckoutObjects.class);
-		hpo.selectItem(driver);
-		hpo.increaseQuantity(driver);
+		hpo.selectItem();
+		hpo.increaseQuantity();
 		hpo.clickAddToCartButton();
-		hpo.checkout(driver);
+		hpo.checkout();
 	}
 }

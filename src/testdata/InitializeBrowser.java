@@ -14,7 +14,7 @@ public class InitializeBrowser {
 	public static  void InitializeWebBrowser() {
 		System.setProperty("webdriver.chrome.driver", Constant.Driver_Path);
 		driver=new ChromeDriver();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.navigate().to(Constant.Url);	
 	}	

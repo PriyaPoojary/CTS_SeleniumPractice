@@ -7,7 +7,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class CheckoutObjects {
-	
+	protected WebDriver driver;
+
+	public CheckoutObjects(WebDriver _driver) {
+		this.driver = _driver;
+	}
+
 	@FindBy(xpath="//*[@id='menu-item-2213']/a")
 	private WebElement linkWoman;
 	
@@ -29,14 +34,14 @@ public class CheckoutObjects {
 	@FindBy(xpath = "//*[@id='nav-menu-item-cart']/div/div[3]/div[2]/a[2]")
 	private WebElement btnCheckout;
 	
-	public void selectItem(WebDriver driver){
+	public void selectItem(){
 		Actions action = new Actions(driver);
 		action.moveToElement(linkWoman).build().perform();
 		linkJackets.click();
 		linkJacketItem.click();
 	}
 	
-	public void increaseQuantity(WebDriver driver){
+	public void increaseQuantity(){
 		((JavascriptExecutor) driver).executeScript("scroll(0,300);");
 		iconIncreaseQuantity.click();
 	}
@@ -45,7 +50,11 @@ public class CheckoutObjects {
 		btnAddToCart.click();
 	}
 	
-	public void checkout(WebDriver driver){
+	public CheckoutObjects() {
+		super();
+	}
+
+	public void checkout(){
 		Actions action1 = new Actions(driver);
 		action1.moveToElement(iconCart).build().perform();
 		btnCheckout.click();
